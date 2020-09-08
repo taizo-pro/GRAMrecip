@@ -29,6 +29,11 @@
       <p class="alert"><%= alert %></p>
     </div>
   <% end %>
+
+  <%= link_to root_path, class: "navbar-item" do %>
+   <%# linkの中に表示される文字を記述する%>
+  <h1 class="title is-4" style="font-family: cursive;">recipegram</h1>
+  <% end %>
   
     <%= yield %>
 </body>
