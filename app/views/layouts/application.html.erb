@@ -31,10 +31,13 @@
   <% end %>
 
   <%= link_to root_path, class: "navbar-item" do %>
-   <%# linkの中に表示される文字を記述する%>
-  <h1 class="title is-4" style="font-family: cursive;">recipegram</h1>
+    <%# linkの中に表示される文字を記述する%>
+    <h1 class="title is-4" style="font-family: cursive;">recipegram</h1>
   <% end %>
-  
+
+  <%# HTTPメソッドのmethodを忘れずに記述する。%>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
+
     <%= yield %>
 </body>
 
