@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    # ユーザーがページにアクセスする前に、これを呼び出す
+    # ログイン済みユーザーのみにアクセスを許可する
     before_action :configure_permitted_parameters, if: :devise_controller?
     # このコントローラ内でしか呼ばれないようにする
     private
