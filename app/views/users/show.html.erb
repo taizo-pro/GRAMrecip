@@ -29,6 +29,9 @@
                 <%# メールアドレスを自分以外で表示させないため%>
                   <%= @user.email %>
                 </td>
+                <td>
+                  <%= link_to "編集", edit_user_path(), class: "button is-primary" %>
+                </td>
                 <% end %>
               </tr>
             </table>
