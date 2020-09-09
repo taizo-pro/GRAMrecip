@@ -16,4 +16,18 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+
+  # 編集してDBに登録するアクション
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    # 画面遷移
+    redirect_to user_path(@user)
+  end
+
+  # DBに登録するカラムを定義
+  private
+  def user_params
+    params.require(:user).permit(:username, :email, :profile, :profile_image)
+  end
 end
