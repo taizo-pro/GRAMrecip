@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  # ユーザーの編集画面
   def edit
+    @user = User.find(params[:id])
   end
 end
