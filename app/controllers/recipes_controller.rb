@@ -6,6 +6,8 @@ class RecipesController < ApplicationController
   end
 
   def new
+    # 新規投稿なので空のモデルを持ってくる
+    @recipe = Recipe.new
   end
 
   def edit
