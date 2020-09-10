@@ -2,7 +2,10 @@ class RecipesController < ApplicationController
   def index
   end
 
+  # レシピの詳細画面
   def show
+    # 1人だけの情報をとってくる
+    @recipe = Recipe.find(params[:id])
   end
 
   def new
