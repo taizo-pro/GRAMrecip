@@ -33,6 +33,9 @@
                   <td><%= simple_format @recipe.body %></td>
                 </tr>
               </table>
+              <% if @recipe.user.id == current_user.id %>
+                <%= link_to "編集", edit_recipe_path(@recipe), class: "button is-primary" %>
+              <% end %>
             </div>
           </div>
         </div>
