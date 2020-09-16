@@ -34,6 +34,12 @@ class RecipesController < ApplicationController
     redirect_to recipe_path(@recipe)
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to recipe_path(@recipe)
+  end
+
   # DBに登録するカラムを設定する
   private
   def recipe_params
