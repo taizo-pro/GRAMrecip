@@ -48,3 +48,7 @@
     </div>
   </div>
 </section>
+
+<% @user.recipes.each do |recipe| %>
+  <%= attachment_image_tag recipe, :image %>
+<% end %>

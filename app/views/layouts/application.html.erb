@@ -39,6 +39,9 @@
   <% if user_signed_in? %>
     <%= link_to "レシピグラマー一覧", users_path, method: :get, class: "button is-warning is-light" %>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
+    <%= link_to "レシピ一覧", recipes_path, method: :get, class: "button is-warning is-light" %>
+    <%= link_to "新規投稿", new_recipe_path, method: :get, class: "button is-warning is-light" %>
+    <%= link_to "マイページ", user_path(current_user), method: :get, class: "button is-warning is-light"%>
 
   <% else %>
     <%= link_to "レシピグラマー一覧", users_path, method: :get, class: "button is-warning is-light" %>
