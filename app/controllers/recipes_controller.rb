@@ -24,7 +24,16 @@ class RecipesController < ApplicationController
   def edit
     @recipe = Recipe.find(params[:id])
   end
-  
+
+  # TODO:DBに登録するアクション
+  def update
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(recipe_params)
+    # 画面遷移
+    redirect_to recipe_path(@recipe)
+  end
+
+  # TODO:DBに登録するカラムを設定する
   private
   def recipe_params
     params.require(:recipe).permit(:title, :body, :image)
