@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
   # ユーザーの一覧画面
   def index
     # Userモデルの情報を全て取得する
