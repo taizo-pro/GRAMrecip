@@ -17,6 +17,9 @@ class UsersController < ApplicationController
   # ユーザーの編集画面
   def edit
     @user = User.find(params[:id])
+    if @user != current_user
+      redirect_to users_path, alert: '不正なアクセスです！'
+    end
   end
 
   # 編集してDBに登録するアクション
