@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
     # ログインしてる人のIDを判別する。誰が投稿しているのか
     @recipe.user_id = current_user.id
     if @recipe.save
-      redirect_to recipe_path(@recipe)
+      redirect_to recipe_path(@recipe), notice: '作成に成功しました'
     else
       render :new
     end
@@ -38,7 +38,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
     # 画面遷移
-      redirect_to recipe_path(@recipe)
+      redirect_to recipe_path(@recipe), notice: '更新に成功しました'
     else
       render :edit
     end
